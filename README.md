@@ -8,7 +8,9 @@ Table of Contents
 1. [Conda](#conda-environment)
 2. [Download PubMed Baseline](#baseline)
 3. [XML to JSON](#xml-to-json)
+4. [Use MongoDB](#get-mongodb-database)
 
+<br>
 
 Conda Environment
 -----
@@ -18,6 +20,40 @@ conda env create -f ./pubmeddb.yml
 ```
 <br>
 <br>
+
+JSON Fields
+-----
+For PubMedID Collection:
+```bash
+{
+    	"PMID":"XX",
+    	"ArticleTitle": "xx",
+    	"Abstract":{
+	        	"Text": "...",
+	        	"Words":{
+	            	"Word1":{
+		                	"Stems": [xx , xx, xx],
+		                	"Count": 1
+           		        }
+			        "Word2":{ 
+		                	"Stems": [xx , xx, xx],
+		                	"Count": 1
+                        }
+		            }
+        }
+        “Country”:“XX”
+	    “MeshHeading”:{
+		“MeshIdentifier (Ex. D000818)”:{
+			“DescriptorName”: “XX”
+			“QualifierName”:{}
+		}
+	}	
+}
+
+
+```
+
+
 
 Baseline
 -----
@@ -41,12 +77,17 @@ Please edit the `PBS -M` with your email address in `pubmed_submit.sh`.
 ##PBS -M <email>
 ```
 <br>
-Run the following code in the <strong>COMPUTE node</strong> and submit script as a job from a tempory/scratch directory (currently project directory is only readbale byt the compute nodes).
+Run the following code in the <strong>COMPUTE node</strong> and submit script as a job from a tempory/scratch directory (currently project directory is only readable by the compute nodes).
 
 ```bash
 cd <SCRATCH DIR>
 qsub /project/st-wasserww-1/PubMed_DB/pubmed_submit.sh
 ```
+<br>
+<br>
+
+Get MongoDB Database
+-----
 
 
 
