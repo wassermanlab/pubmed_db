@@ -39,21 +39,23 @@ CONTEXT_SETTINGS = {
 
 def main(**params):
 
-    #Connect to database
+    # TODO: Connect to database (the next 3 lines are placeholders)
     db = __get_database('pubmeddb')
     pm_collection = db.pubmed_id
     gene_collection = db.gene_id
 
     # Identifiers
-    foreground = __get_identifiers(params["foreground"], params["input_type"])
-    background = __get_identifiers(params["background"], params["input_type"])
+    foreground = get_identifiers(params["foreground"], params["input_type"])
+    background = get_identifiers(params["background"], params["input_type"])
 
     # Identifiers to PMIDS
-    fore_entrezids, fore_symbols, fore_pmids = __identifier2pmids(foreground, gene_collection, params['input_type'])
-    back_entrezids, back_symbols, back_pmids = __identifier2pmids(background, gene_collection, params['input_type'])
+    fore_entrezids, fore_symbols, fore_pmids = identifier2pmids(foreground, gene_collection, params['input_type'])
+    back_entrezids, back_symbols, back_pmids = identifier2pmids(background, gene_collection, params['input_type'])
+
+    # TODO: From pmids, collect words from the pm_collection and then calculate tfidfs from foreground and background (maybe another function?)
 
 
-def __get_identifiers(input_file, input_type):
+def get_identifiers(input_file, input_type):
 
     # Get identifiers
     if input_file is not None:
@@ -68,7 +70,7 @@ def __get_identifiers(input_file, input_type):
     return(identifiers)
 
 
-def __identifier2pmids(idlist, collection, input_type):
+def identifier2pmids(idlist, collection, input_type):
     entrezid_list = []
     symbol_list = []
     pmids_list = []
@@ -88,9 +90,6 @@ def __identifier2pmids(idlist, collection, input_type):
             pmids_list.append(d['PubMed_ID'])
 
     return(entrezid_list, symbol_list, pmids_list)
-
-
-def 
 
 
 

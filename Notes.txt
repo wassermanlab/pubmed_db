@@ -1,0 +1,12 @@
+SOME MATERIALS / IDEAS
+
+- This project is a branch from the gene2wordclouds (https://github.com/wassermanlab/gene2wordclouds)
+    - it would be useful to understand how some parts of that script works, especially the abstract2words.py (which is in the utils folder)
+    - involving TFIDFs (https://en.wikipedia.org/wiki/Tf%E2%80%93idf)
+    - the script should help you code parts of the gettfidf script (thye are essentially supposed to do very similar things)
+
+- It would be nice to read a little about non-relational database and MongoDB a little before coding to understand how these things work if you are not already familiar with those
+
+- Feel free to change up any of the TODOs that I have written in the scripts b/c those were preliminary ideas that I am unsure if they are actually necessary in the scripts
+
+- I believe that it might be nice to have a single shell/python script that calls on these other scripts (jsontodb and gettfidfs) to knit their results together but might not actually be necessary

@@ -23,8 +23,19 @@ conda env create -f ./pubmeddb.yml
 
 JSON Fields
 -----
-For PubMedID Collection:
-```bash
+<table>
+<tr>
+<th>
+PubMedID Collection
+</th>
+<th>
+Gene Collection
+</th>
+</tr>
+
+<tr>
+<td>
+<pre>
 {
     	"PMID":"XX",
     	"ArticleTitle": "xx",
@@ -34,24 +45,38 @@ For PubMedID Collection:
 	            	"Word1":{
 		                	"Stems": [xx , xx, xx],
 		                	"Count": 1
-           		        }
+           		        },
 			        "Word2":{ 
 		                	"Stems": [xx , xx, xx],
 		                	"Count": 1
                         }
 		            }
-        }
-        “Country”:“XX”
-	    “MeshHeading”:{
-		“MeshIdentifier (Ex. D000818)”:{
-			“DescriptorName”: “XX”
-			“QualifierName”:{}
+                },
+        "Country": "XX",
+	    "MeshHeading":{
+		    "MeshIdentifier (Ex. D000818)":{
+			    "DescriptorName": "XX",
+			    "QualifierName":{}
 		}
 	}	
 }
+</pre>
+</td>
 
+<td>
+<pre>
+{
+    	"GeneID": XX,
+	“Name”: XX
+    	"TaxonomyID": XX,
+    	"PubMedID": [xx , xx, xx]
+}
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</pre>
+</td>
 
-```
+</table>
+
 
 
 

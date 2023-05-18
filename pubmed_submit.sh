@@ -3,7 +3,7 @@
 #PBS -l walltime=24:00:00,select=1:mem=100gb
 #PBS -A st-wasserww-1
 #PBS -m ae
-#PBS -M tiffyl@student.ubc.ca
+#PBS -M <email>
 
 source ~/.bashrc
 conda activate pubmeddb

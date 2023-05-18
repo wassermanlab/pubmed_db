@@ -36,26 +36,22 @@ CONTEXT_SETTINGS = {
 
 
 def main(**params):
-   db = __get_database(params['database'])
+   ## TODO: Create local MongoDB database - update the get_database function
+   db = get_database("somedatabasename")
 
-   #Creating collections & insert data
+   ## TODO: Creating collections & insert data (pubmed, gene)
+   ## The codes below may be incorrect, please check (these are just preliminary)
    pm_collection = get_collection(db.pubmed_id, params['pubmedid_json'])
 
    gene_collection = get_collection(db.gene_id, params['geneid_json'])
 
 
-def __get_database(newdbname):
- 
-   # Provide the mongodb atlas url to connect python to mongodb using pymongo
-   CONNECTION_STRING = "mongodb+srv://user:pass@cluster.mongodb.net/myFirstDatabase"
- 
-   # Create a connection using MongoClient. You can import MongoClient or use pymongo.MongoClient
-   client = MongoClient(CONNECTION_STRING)
- 
-   # Create the database for our example (we will use the same database throughout the tutorial
-   return client[newdbname]
+# function to create local database on server (may eventually want to host it but test with local database first)
+def get_database(dbname):
 
+   return dbname
 
+# function to takke collection and insert with json information
 def get_collection(collection, jsonfile):
    with gzip.open(jsonfile) as json:
       json_data = json.load(json)
