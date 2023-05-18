@@ -10,3 +10,5 @@ SOME MATERIALS / IDEAS
 - Feel free to change up any of the TODOs that I have written in the scripts b/c those were preliminary ideas that I am unsure if they are actually necessary in the scripts
 
 - I believe that it might be nice to have a single shell/python script that calls on these other scripts (jsontodb and gettfidfs) to knit their results together but might not actually be necessary
+
+- The codes are on github (https://github.com/wassermanlab/pubmed_db) and i have been working on sockeye (/arc/project/st-wasserww-1/PubMed_DB)
